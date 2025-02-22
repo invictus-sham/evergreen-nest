@@ -95,20 +95,31 @@
     background-color: #45a049;
   }
   /* Home Page Background */
-.homepage {
-  background-image: url('./images/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; /* Full screen height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
+  @keyframes backgroundSlideshow {
+    0% { background-image: url('./images/background.jpg'); }
+    16.6% { background-image: url('./images/random-background-1.jpg'); }
+    33.2% { background-image: url('./images/random-background-2.jpg'); }
+    49.8% { background-image: url('./images/random-background-3.jpg'); }
+    66.4% { background-image: url('./images/random-background-4.jpg'); }
+    83% { background-image: url('./images/random-background-5.jpg'); }
+    100% { background-image: url('./images/background.jpg'); }
+  }
+  
+  .homepage {
+    animation: backgroundSlideshow 25s infinite ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+  }
+  
 
   
 /* Product List */
@@ -531,11 +542,14 @@
   background-color: #45a049;
 }
 
-  /* Footer */
+/* Footer */
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   text-align: center;
   padding: 20px;
-  background-color: #4CAF50;
+  background-color: #4caf4f9d;
   color: white;
   margin-top: 20px;
 }
@@ -555,12 +569,24 @@ footer {
   color: #ddd;
 }
 
+
+@keyframes backgroundSlideshow1 {
+  0% { background-image: url('./images/category-background.jpg'); }
+  16.6% { background-image: url('./images/random-background-6.jpg'); }
+  33.2% { background-image: url('./images/random-background-7.jpg'); }
+  49.8% { background-image: url('./images/random-background-8.jpg'); }
+  66.4% { background-image: url('./images/random-background-9.jpg'); }
+  83% { background-image: url('./images/random-background-10.jpg'); }
+  100% { background-image: url('./images/category-background.jpg'); }
+}
+
 .category-page {
   text-align: center;
   padding: 20px;
-  background-image: url("./images/category-background.jpg");
+  animation: backgroundSlideshow1 25s infinite ;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -638,10 +664,21 @@ footer {
 }
 
 
+@keyframes backgroundSlideshow2 {
+  0% { background-image: url('./images/background1.jpg'); }
+  16.6% { background-image: url('./images/random-background-6.jpg'); }
+  33.2% { background-image: url('./images/random-background-7.jpg'); }
+  49.8% { background-image: url('./images/random-background-8.jpg'); }
+  66.4% { background-image: url('./images/random-background-9.jpg'); }
+  83% { background-image: url('./images/random-background-10.jpg'); }
+  100% { background-image: url('./images/background1.jpg'); }
+}
 
 .about-us-container {
-  background: url('./images/background1.jpg') no-repeat center center fixed;
+  animation: backgroundSlideshow2 25s infinite ;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   justify-content: center;
